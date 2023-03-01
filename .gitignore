@@ -3,4 +3,6 @@ out
 *.iml
 .idea
 saves
+tests
+.vscode
 

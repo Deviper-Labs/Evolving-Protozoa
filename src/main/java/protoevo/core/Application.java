@@ -5,6 +5,8 @@ import protoevo.ui.components.TextStyle;
 import protoevo.ui.simulation.SimulationController;
 import protoevo.ui.simulation.SimulationRenderer;
 
+import py4j.GatewayServer;
+
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +39,10 @@ public class Application
 			simulation = new Simulation(args.get("-save"));
 		else
 			simulation = new Simulation();
+		
+		// app is now the gateway.entry_point
+		GatewayServer server = new GatewayServer(simulation);
+		server.start();
 
 		try {
 			if (!(Boolean.parseBoolean(args.getOrDefault("noui", "false")))) {
