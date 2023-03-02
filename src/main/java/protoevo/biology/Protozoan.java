@@ -24,6 +24,8 @@ public class Protozoan extends Cell
 	private Protozoan mate;
 	private float timeMating = 0;
 
+	public final Vector2 oldpos = new Vector2(0, 0);
+	
 	private Retina retina;
 	private final Brain brain;
 
@@ -442,6 +444,11 @@ public class Protozoan extends Cell
 
 	public Spike[] getSpikes() {
 		return spikes;
+	}
+
+	public Vector2 getVelocity() {
+		Vector2 V = getPos().sub(oldpos);
+		return V;
 	}
 
 	public float getSpikeLength(Spike spike) {

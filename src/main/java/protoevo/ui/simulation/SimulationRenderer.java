@@ -148,6 +148,7 @@ public class SimulationRenderer extends Canvas {
 	{
 		Vector2 pos = toRenderSpace(p.getPos());
 		float r = toRenderSpace(p.getRadius());
+		Vector2 v = p.getVelocity();
 
 		if (circleNotVisible(pos, r))
 			return;
