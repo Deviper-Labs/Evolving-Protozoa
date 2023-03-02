@@ -11,8 +11,8 @@ rock_clustering: 0.99
 min_rock_opening_size: 0.08
 
 # Initial conditions
-num_initial_protozoa: 100
-num_initial_plants: 1000
+num_initial_protozoa: 10
+num_initial_plants: 10
 num_initial_pop_centres: 4
 pop_cluster_radius: 0.3
 

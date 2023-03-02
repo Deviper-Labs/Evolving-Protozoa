@@ -15,6 +15,8 @@ import protoevo.utils.Vector2;
 public class SimulationRenderer extends Canvas {
 	private static final long serialVersionUID = 1L;
 	
+	public float mass = 1;
+
 	private float time = 0;
 	private final Vector2 tankRenderCoords;
 	private final float tankRenderRadius;
@@ -149,6 +151,8 @@ public class SimulationRenderer extends Canvas {
 		Vector2 pos = toRenderSpace(p.getPos());
 		float r = toRenderSpace(p.getRadius());
 		Vector2 v = p.getVelocity();
+
+		fillCircle(g, pos.add(v), 10, getBackground());
 
 		if (circleNotVisible(pos, r))
 			return;
