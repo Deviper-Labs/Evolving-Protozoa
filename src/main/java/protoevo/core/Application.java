@@ -40,9 +40,6 @@ public class Application
 		else
 			simulation = new Simulation();
 		
-		// app is now the gateway.entry_point
-		GatewayServer server = new GatewayServer(simulation);
-		server.start();
 
 		try {
 			if (!(Boolean.parseBoolean(args.getOrDefault("noui", "false")))) {
@@ -52,6 +49,10 @@ public class Application
 				SimulationRenderer renderer = new SimulationRenderer(simulation, window);
 				SimulationController controller = new SimulationController(window, simulation, renderer);
 				window.set(renderer, controller);
+
+				// The gateway.entry_point
+				GatewayServer server = new GatewayServer(renderer);
+				server.start();
 
 				SwingUtilities.invokeLater(window);
 			}
